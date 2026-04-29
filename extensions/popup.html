@@ -2,34 +2,48 @@
 <html>
 <head>
     <title>Emotion Analyzer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="header">
-        <h2>Emotion Analyzer</h2>
-        <div class="subtitle">Powered by DeBERTa-v3</div>
-    </div>
-
-    <div id="selection-card" class="card hidden">
-        <label>Selected Text:</label>
-        <div id="selectedText"></div>
-    </div>
-    
-    <div id="loading" class="hidden">
-        <div class="spinner"></div>
-        <p>Analyzing text...</p>
-    </div>
-
-    <div id="results" class="hidden">
-        <label>Emotions Breakdown</label>
-        <div class="chart-container">
-            <canvas id="emotionChart"></canvas>
+    <div class="glass-container">
+        <div class="header">
+            <div class="logo-icon">✨</div>
+            <div class="header-text">
+                <h2>Emotion Analyzer</h2>
+                <div class="subtitle">Powered by AI</div>
+            </div>
         </div>
-        <div id="emotionList"></div>
-    </div>
 
-    <div id="no-selection" class="card">
-        <p>No text selected.<br/><br/>Highlight text on the page and then click the extension icon to analyze.</p>
+        <div id="selection-card" class="card hidden">
+            <label>Selected Text</label>
+            <div class="text-glow-wrapper">
+                <div id="selectedText"></div>
+            </div>
+        </div>
+        
+        <div id="loading" class="hidden loading-container">
+            <div class="spinner-wrapper">
+                <div class="spinner"></div>
+                <div class="spinner-glow"></div>
+            </div>
+            <p>Analyzing text...</p>
+        </div>
+
+        <div id="results" class="hidden">
+            <label class="results-label">Emotions Breakdown</label>
+            <div class="chart-container card">
+                <canvas id="emotionChart"></canvas>
+            </div>
+            <div id="emotionList" class="emotion-list card"></div>
+        </div>
+
+        <div id="no-selection" class="card no-selection-card">
+            <div class="empty-icon">📝</div>
+            <p>No text selected.<br/><span>Highlight text on the page and then click the extension icon to analyze.</span></p>
+        </div>
     </div>
 
     <script src="chart.js"></script>
